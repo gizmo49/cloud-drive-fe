@@ -1,0 +1,53 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.125rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background-color: #2970ff;
+  color: #ffffff;
+
+  &:hover:not(:disabled) {
+    background-color: #1b4ddb;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba(41, 112, 255, 0.1);
+  }
+}
+
+.secondary {
+  background-color: #ffffff;
+  border-color: #d0d5dd;
+  color: #344054;
+
+  &:hover:not(:disabled) {
+    background-color: #f9fafb;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba(52, 64, 84, 0.1);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

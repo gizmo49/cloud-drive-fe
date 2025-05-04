@@ -1,0 +1,96 @@
+.previewModal {
+    @apply max-w-7xl w-full h-[90vh];
+}
+
+.previewContainer {
+    @apply h-full flex flex-col;
+}
+
+.header {
+    @apply border-b border-gray-200;
+}
+
+.headerContent {
+    @apply px-4 py-3 flex items-center justify-between bg-white;
+}
+
+.fileInfo {
+    @apply flex items-center space-x-4;
+}
+
+.backButton {
+    @apply text-gray-500 hover:text-gray-700;
+    
+    svg {
+        @apply text-lg;
+    }
+}
+
+.fileName {
+    @apply text-lg font-medium;
+}
+
+.fileDetails {
+    @apply flex items-center text-sm text-gray-500;
+}
+
+.separator {
+    @apply mx-2;
+}
+
+.actions {
+    @apply flex items-center space-x-2;
+}
+
+.actionButton {
+    @apply p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100;
+}
+
+.toolbar {
+    @apply px-4 py-2 border-t border-gray-200 flex items-center justify-between bg-gray-50;
+}
+
+.toolbarGroup {
+    @apply flex items-center space-x-4;
+}
+
+.zoomControls, .pageControls {
+    @apply flex items-center space-x-2;
+    
+    button {
+        @apply p-1.5 text-gray-500 hover:text-gray-700 rounded hover:bg-gray-200;
+    }
+    
+    span {
+        @apply text-sm;
+    }
+}
+
+.toolbarActions {
+    @apply flex items-center space-x-2;
+}
+
+.toolbarButton {
+    @apply p-1.5 text-gray-500 hover:text-gray-700 rounded hover:bg-gray-200;
+}
+
+.content {
+    @apply flex-1 overflow-auto bg-gray-100;
+}
+
+.previewWrapper {
+    @apply py-8 flex flex-col items-center;
+}
+
+.previewFrame {
+    @apply bg-white shadow-md rounded-lg w-[800px] mb-6 mx-auto overflow-hidden;
+}
+
+.googleViewer {
+    @apply w-full h-[1000px] border-0;
+    transform-origin: top center;
+}
+
+.pageNumber {
+    @apply text-center text-sm text-gray-500;
+}

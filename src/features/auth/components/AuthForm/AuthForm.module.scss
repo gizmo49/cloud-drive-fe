@@ -1,0 +1,17 @@
+
+
+.form {
+  @apply flex flex-col gap-5 w-full;
+}
+
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buttonContainer {
+  margin-top: 1.5rem;
+}

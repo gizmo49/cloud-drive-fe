@@ -1,0 +1,15 @@
+.breadcrumb {
+  @apply flex items-center text-sm text-gray-500 mb-4;
+}
+
+.item {
+  @apply flex items-center;
+}
+
+.clickable {
+  @apply hover:text-blue-500 cursor-pointer;
+}
+
+.separator {
+  @apply mx-2 text-xs;
+}

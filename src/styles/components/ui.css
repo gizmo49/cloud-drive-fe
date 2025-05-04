@@ -1,0 +1,55 @@
+/* UI Components */
+
+/* Form Elements */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-md bg-white text-sm text-gray-900;
+}
+
+.form-input::placeholder {
+  @apply text-gray-500;
+}
+
+.form-input:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-indigo-100;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply flex justify-center items-center w-full px-6 py-3 bg-primary text-white font-medium rounded-md transition-colors;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-hover;
+}
+
+.btn-primary:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-indigo-100;
+}
+
+/* Links */
+.link-primary {
+  @apply block mt-4 text-center text-sm text-primary hover:text-primary-hover transition-colors;
+}
+
+/* Containers */
+.auth-container {
+  @apply min-h-screen flex items-center justify-center p-6 bg-gray-50;
+}
+
+.form-container {
+  @apply w-full max-w-md mx-auto;
+}
+
+/* Typography */
+.form-title {
+  @apply mb-8 text-center text-3xl font-extrabold text-gray-900;
+}
+
+/* Layout */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.grid-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}

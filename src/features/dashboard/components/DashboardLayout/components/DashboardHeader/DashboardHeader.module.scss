@@ -1,0 +1,91 @@
+.header {
+  @apply bg-white border-b border-gray-200 py-3 px-4 md:px-6;
+}
+
+.container {
+  @apply flex items-center justify-between;
+}
+
+.logoContainer {
+  @apply flex items-center;
+}
+
+.logoIcon {
+  @apply h-10 w-10 bg-blue-500 rounded-md flex items-center justify-center text-white;
+}
+
+.logoText {
+  @apply ml-3 hidden md:block;
+
+  .title {
+    @apply text-lg font-medium;
+  }
+
+  .subtitle {
+    @apply text-xs text-gray-500;
+  }
+}
+
+.actionsContainer {
+  @apply flex items-center space-x-4;
+}
+
+.searchContainer {
+  @apply relative hidden md:block;
+
+  .searchInput {
+    @apply text-base pl-10 pr-4 py-2 border border-gray-200 rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+
+  .searchIcon {
+    @apply absolute left-3 top-3 text-gray-400;
+  }
+}
+
+.mobileSearchButton {
+  @apply md:hidden text-gray-600;
+}
+
+.notificationButton {
+  @apply text-gray-600;
+}
+
+.userMenuContainer {
+  @apply relative;
+}
+
+.avatarButton {
+  @apply h-9 w-9 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden;
+
+  img {
+    @apply h-full w-full object-cover;
+  }
+}
+
+.dropdown {
+  @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 border border-gray-200;
+
+  .userInfo {
+    @apply p-3 border-b border-gray-200;
+
+    .userName {
+      @apply font-medium;
+    }
+
+    .userEmail {
+      @apply text-sm text-gray-500;
+    }
+  }
+
+  .menuItems {
+    @apply py-1;
+
+    .menuItem {
+      @apply block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100;
+
+      &.signOut {
+        @apply text-red-600;
+      }
+    }
+  }
+}

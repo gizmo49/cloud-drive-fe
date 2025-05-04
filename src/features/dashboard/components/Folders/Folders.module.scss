@@ -1,0 +1,39 @@
+.container {
+    @apply mb-8;
+}
+
+.title {
+    @apply text-sm font-medium text-gray-500 mb-3;
+}
+
+.folderGrid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+}
+
+.folderCard {
+    @apply bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow;
+}
+
+.folderContent {
+    @apply flex items-center;
+}
+
+.folderIcon {
+    @apply text-yellow-400 text-3xl mr-3;
+}
+
+.folderInfo {
+    @apply flex-1 min-w-0;
+}
+
+.folderName {
+    @apply truncate text-sm font-medium;
+}
+
+.folderStats {
+    @apply text-xs text-gray-500 mt-1;
+}
+
+.menuButton {
+    @apply text-gray-400 hover:text-gray-600;
+}

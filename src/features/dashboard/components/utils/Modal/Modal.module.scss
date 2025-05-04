@@ -1,0 +1,35 @@
+.modalOverlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modalContent {
+    @apply bg-white rounded-lg shadow-xl relative max-h-[90vh] overflow-y-auto;
+    
+    &.sm {
+        @apply w-full max-w-sm;
+    }
+    
+    &.md {
+        @apply w-full max-w-md;
+    }
+    
+    &.lg {
+        @apply w-full max-w-lg;
+    }
+}
+
+.modalHeader {
+    @apply flex justify-between items-center p-4;
+}
+
+.modalTitle {
+    @apply text-lg font-medium text-gray-900;
+}
+
+.closeButton {
+    @apply text-gray-400 hover:text-gray-500 text-2xl leading-none focus:outline-none;
+}
+
+.modalBody {
+    @apply p-4;
+}

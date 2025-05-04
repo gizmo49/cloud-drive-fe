@@ -1,0 +1,83 @@
+.list {
+    @apply max-h-64 overflow-y-auto mb-6;
+}
+
+.item {
+    @apply flex items-center justify-between p-3 rounded-lg mb-2;
+
+    &.uploading {
+        @apply bg-gray-50;
+    }
+
+    &.complete {
+        @apply bg-green-50;
+    }
+
+    &.error {
+        @apply bg-red-50;
+    }
+}
+
+.itemContent {
+    @apply flex items-center flex-1 min-w-0 mr-4;
+}
+
+.fileIcon {
+    @apply text-xl mr-3;
+
+    .uploading & {
+        @apply text-gray-400;
+    }
+
+    .complete & {
+        @apply text-green-500;
+    }
+
+    .error & {
+        @apply text-red-500;
+    }
+}
+
+.fileInfo {
+    @apply flex-1 min-w-0;
+}
+
+.fileName {
+    @apply text-sm font-medium truncate;
+}
+
+.progress {
+    @apply flex items-center mt-1;
+}
+
+.progressBar {
+    @apply flex-1 bg-gray-200 rounded-full h-1.5;
+}
+
+.progressFill {
+    @apply bg-blue-500 h-1.5 rounded-full;
+}
+
+.progressText {
+    @apply ml-2 text-xs text-gray-500;
+}
+
+.statusText {
+    @apply text-xs;
+
+    .complete & {
+        @apply text-green-600;
+    }
+
+    .error & {
+        @apply text-red-600;
+    }
+}
+
+.actionButton {
+    @apply text-gray-400 hover:text-gray-600;
+}
+
+.checkIcon {
+    @apply text-green-500;
+}

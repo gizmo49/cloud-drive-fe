@@ -1,0 +1,151 @@
+.sidebar {
+  @apply w-64 bg-white border-r border-gray-200 flex-shrink-0 hidden md:flex md:flex-col;
+}
+
+.uploadSection {
+  @apply p-4;
+}
+
+.uploadButton {
+  @apply w-full bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-2.5 flex items-center justify-center;
+  
+  .icon {
+    @apply mr-2;
+  }
+}
+
+.uploadDropdown {
+  @apply absolute mt-2 left-16 w-48 bg-white rounded-md shadow-lg z-10 border border-gray-200;
+}
+
+.dropdownContent {
+  @apply py-1;
+}
+
+.dropdownItem {
+  @apply flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer w-full;
+  
+  .icon {
+    @apply mr-2 text-gray-500;
+  }
+}
+
+.navigation {
+  @apply mt-2 flex-1 overflow-y-auto;
+}
+
+.navItem {
+  @apply flex items-center px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-100 cursor-pointer w-full;
+  
+  &.active {
+    @apply text-blue-600 bg-blue-50;
+    
+    .icon {
+      @apply text-blue-500;
+    }
+  }
+  
+  .icon {
+    @apply mr-3 text-gray-500;
+  }
+}
+
+.tagsSection {
+  @apply mt-6 px-4;
+}
+
+.tagsTitle {
+  @apply text-xs font-medium text-gray-500 uppercase tracking-wider mb-2;
+}
+
+.tagItem {
+  @apply flex items-center px-2 py-1.5 text-sm text-gray-700 hover:opacity-85 rounded cursor-pointer w-full;
+}
+
+.tagDot {
+  @apply h-3 w-3 rounded-full mr-3;
+}
+
+.storageSection {
+  @apply p-4 border-t border-gray-200;
+}
+
+.storageInfo {
+  @apply flex items-center justify-between mb-2;
+}
+
+.storageText {
+  @apply text-sm text-gray-500;
+}
+
+.storageSize {
+  @apply text-sm font-medium;
+}
+
+.storageBar {
+  @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.storageProgress {
+  @apply h-full bg-blue-500 rounded-full;
+}
+
+.upgradeButton {
+  @apply mt-4 text-sm text-blue-500 hover:text-blue-700 font-medium;
+}
+
+
+// Add these new styles for mobile navigation
+.mobileNav {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.mobileMenu {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.mobileMenuContent {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    overflow-x: auto;
+    gap: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.mobileNavItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #4b5563;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    border: none;
+    background: none;
+
+    &.active {
+        color: #2563eb;
+    }
+
+    .icon {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+// Modify the existing sidebar class
+.sidebar {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}

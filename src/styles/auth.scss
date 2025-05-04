@@ -1,0 +1,103 @@
+// Authentication styles
+
+// Variables
+$primary-color: #4f46e5; // Indigo-600
+$primary-hover: #4338ca; // Indigo-700
+$text-primary: #111827; // Gray-900
+$text-secondary: #6b7280; // Gray-500
+$border-color: #d1d5db; // Gray-300
+$background-light: #f9fafb; // Gray-50
+$focus-ring: #e0e7ff; // Indigo-100
+
+// Mixins
+@mixin focus-ring {
+  &:focus {
+    outline: none;
+    ring: 2px;
+    ring-offset: 2px;
+    ring-color: $focus-ring;
+  }
+}
+
+@mixin input-base {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid $border-color;
+  border-radius: 0.375rem;
+  background-color: white;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: $text-primary;
+  
+  &::placeholder {
+    color: $text-secondary;
+  }
+  
+  @include focus-ring;
+}
+
+@mixin button-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: $primary-color;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+  
+  &:hover {
+    background-color: $primary-hover;
+  }
+  
+  @include focus-ring;
+}
+
+// Auth container
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: $background-light;
+}
+
+// Form elements
+.auth-form {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  
+  &__title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: $text-primary;
+  }
+  
+  &__input {
+    @include input-base;
+    margin-bottom: 1rem;
+  }
+  
+  &__button {
+    @include button-primary;
+    margin-top: 1.5rem;
+  }
+  
+  &__link {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: $primary-color;
+    
+    &:hover {
+      color: $primary-hover;
+    }
+  }
+}

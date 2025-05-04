@@ -1,0 +1,8 @@
+.text {
+  @apply mt-6 text-center text-sm text-base-600;
+}
+
+.link {
+  @apply text-primary-600 font-medium hover:text-primary-700;
+  @apply transition-colors duration-200;
+}

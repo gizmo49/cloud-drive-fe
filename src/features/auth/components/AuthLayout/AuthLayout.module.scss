@@ -1,0 +1,16 @@
+.container {
+  @apply min-h-screen flex items-center justify-center p-6;
+}
+
+.content {
+  @apply w-full max-w-[28rem] p-8;
+  // shadow-base-900/5;
+}
+
+.title {
+  @apply mb-2 text-2xl font-semibold text-base-900;
+}
+
+.description {
+  @apply mb-8 text-base text-base-600;
+}
