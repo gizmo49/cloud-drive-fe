@@ -34,7 +34,6 @@ const FolderPage = () => {
 
     const handlePreview = (file: IFileData) => {
         setSelectedFile(file);
-        console.log('Selected file:', file);
         setIsPreviewOpen(true);
     };
 
@@ -74,7 +73,6 @@ const FolderPage = () => {
                 setError('Failed to fetch folder data');
                 return;
             }
-            console.log('Folder response:', response); // Add this log statement t
             setCurrentFolder(response);
             const processedFolders = processFolders(response.subFolders || []);
             const processedFiles = processFiles(response.files || []);
@@ -83,7 +81,6 @@ const FolderPage = () => {
             setFiles(processedFiles);
             setStatus((!processedFiles.length && !processedFolders.length) ? 'empty' : 'success');
         } catch (err: any) {
-            console.error('Error fetching folder data:', err);
             setError(err);
             setStatus('error');
         }
@@ -174,7 +171,6 @@ const FolderPage = () => {
                     isOpen={isCreateFolderModalOpen}
                     onClose={() => setIsCreateFolderModalOpen(false)}
                     onSubmit={(folderData) => {
-                        console.log('Creating folder:', folderData);
                         setIsCreateFolderModalOpen(false);
                         fetchData(true); // Refresh the folder content
                     }}

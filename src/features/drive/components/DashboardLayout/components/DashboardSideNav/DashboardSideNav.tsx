@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import { FaPlus, FaGoogleDrive } from 'react-icons/fa';
-import { FaFolderPlus, FaUpload, FaFileCirclePlus } from 'react-icons/fa6';
+import { FaFolderPlus, FaUpload } from 'react-icons/fa6';
 import { FaRegUser, FaRegClock, FaRegStar, FaRegTrashCan, FaBars } from 'react-icons/fa6';
 import styles from './DashboardSideNav.module.scss';
 import CreateFolderModal from '../../../CreateFolderModal/CreateFolderModal';
 import UploadModal from '../../../UploadModal/UploadModal';
+import { useRouter } from 'next/navigation';
 
 const navigationItems = [
     { icon: FaGoogleDrive, label: 'My Drive', active: true },
@@ -23,6 +24,7 @@ const tags = [
 ];
 
 export const DashboardSideNav = () => {
+    const router = useRouter();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isCreateFolderModalOpen, setIsCreateFolderModalOpen] = useState(false);
     const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
@@ -61,7 +63,7 @@ export const DashboardSideNav = () => {
                     {isDropdownOpen && (
                         <div className={styles.uploadDropdown}>
                             <div className={styles.dropdownContent}>
-                                <button 
+                                <button
                                     className={styles.dropdownItem}
                                     onClick={() => {
                                         setIsCreateFolderModalOpen(true);
@@ -71,7 +73,7 @@ export const DashboardSideNav = () => {
                                     <FaFolderPlus className={styles.icon} />
                                     New Folder
                                 </button>
-                                <button 
+                                <button
                                     className={styles.dropdownItem}
                                     onClick={() => {
                                         setIsUploadModalOpen(true);
@@ -129,18 +131,18 @@ export const DashboardSideNav = () => {
                 </div>
             </aside>
 
-            <CreateFolderModal
+            {isCreateFolderModalOpen && <CreateFolderModal
                 isOpen={isCreateFolderModalOpen}
                 onClose={() => setIsCreateFolderModalOpen(false)}
                 onSubmit={(folderData) => {
-                    console.log('Creating folder:', folderData);
-                    // Implement folder creation logic here
+                    router.push(`/drive/${folderData._id}`);
                 }}
-            />
-            <UploadModal
+            />}
+            {isUploadModalOpen && <UploadModal
                 isOpen={isUploadModalOpen}
                 onClose={() => setIsUploadModalOpen(false)}
             />
+            }
         </>
     );
 };

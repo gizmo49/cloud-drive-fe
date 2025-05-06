@@ -72,7 +72,7 @@ const ActionsBar = ({ folder, handleRefresh }: ActionsBarProps) => {
                     </div>
                 </div>
             </div>
-            <CreateFolderModal
+            {isCreateFolderModalOpen && <CreateFolderModal
                 isOpen={isCreateFolderModalOpen}
                 onClose={() => setIsCreateFolderModalOpen(false)}
                 onSubmit={handleCreateFolderSuccess}
@@ -80,15 +80,15 @@ const ActionsBar = ({ folder, handleRefresh }: ActionsBarProps) => {
                     parentFolderId: folder?.id || '',
                     parentFolderName: folder?.name || '',
                 }}
-            />
-            <UploadModal
+            />}
+            {isUploadModalOpen && <UploadModal
                 isOpen={isUploadModalOpen}
                 onClose={() => handleCreateFileSuccess()}
                 reference={{
                     parentFolderId: folder?.id || '',
                     parentFolderName: folder?.name || '',
                 }}
-            />
+            />}
         </>
     );
 };

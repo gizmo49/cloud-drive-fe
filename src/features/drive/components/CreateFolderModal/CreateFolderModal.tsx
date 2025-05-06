@@ -12,6 +12,7 @@ interface CreateFolderModalProps {
     onClose: () => void;
     onSubmit: (folderData: {
         name: string;
+        _id: string;
     }) => void;
     reference?: {
         parentFolderId: string;

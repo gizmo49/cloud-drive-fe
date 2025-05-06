@@ -67,7 +67,7 @@ const HomePage = () => {
         }));
     };
 
-    const fetchData = async (skipSkeleton?:boolean) => {
+    const fetchData = async (skipSkeleton?: boolean) => {
         try {
             !skipSkeleton && setStatus('loading');
             setError(null);
@@ -78,7 +78,6 @@ const HomePage = () => {
                 setError('Failed to fetch data');
                 return;
             }
-            console.log("response", response)
             const processedFolders = processFolders(response?.folders || []);
             const processedFiles = processFiles(response?.files || []);
 
@@ -86,7 +85,6 @@ const HomePage = () => {
             setFiles(processedFiles);
             setStatus((!processedFiles.length && !processedFolders.length) ? 'empty' : 'success');
         } catch (err) {
-            console.error('Error fetching data:', err);
             const errorMessage = 'An unexpected error occurred';
             setError(errorMessage);
             setStatus('error');
@@ -100,7 +98,7 @@ const HomePage = () => {
     const renderContent = () => {
         switch (status) {
             case 'loading':
-                return <LoadingSkeleton />; 
+                return <LoadingSkeleton />;
             case 'error':
                 return (
                     <Error
@@ -118,7 +116,7 @@ const HomePage = () => {
             case 'success':
                 return (
                     <>
-                        {files.length > 0 && <QuickAccess files={files} onPreview={handlePreview}  />}
+                        {files.length > 0 && <QuickAccess files={files} onPreview={handlePreview} />}
                         {folders.length > 0 && <Folders folders={folders} />}
                         {files.length > 0 && <FilesTable
                             files={files}
@@ -134,10 +132,8 @@ const HomePage = () => {
         <DashboardLayout>
             <div className="p-6">
                 <Breadcrumb items={breadcrumbItems} />
-                <ActionsBar />
+                <ActionsBar handleRefresh={() => fetchData()} />
                 {renderContent()}
-
-
                 {selectedFile && (
                     <FilePreview
                         isOpen={isPreviewOpen}
@@ -152,17 +148,21 @@ const HomePage = () => {
                         }}
                     />
                 )}
-                <CreateFolderModal
+                {isCreateFolderModalOpen && <CreateFolderModal
                     isOpen={isCreateFolderModalOpen}
                     onClose={() => setIsCreateFolderModalOpen(false)}
                     onSubmit={(folderData) => {
                         setIsCreateFolderModalOpen(false);
+                        fetchData(true);
                     }}
-                />
-                <UploadModal
+                />}
+                {isCreateFolderModalOpen && <UploadModal
                     isOpen={isUploadModalOpen}
-                    onClose={() => setIsUploadModalOpen(false)}
-                />
+                    onClose={() => {
+                        setIsUploadModalOpen(false)
+                        fetchData(true);
+                    }}
+                />}
             </div>
         </DashboardLayout>
     );

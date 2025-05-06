@@ -34,7 +34,6 @@ const FilePreview = ({ isOpen, onClose, file }: FilePreviewProps) => {
     const [zoom, setZoom] = useState(100);
     const [currentPage, setCurrentPage] = useState(1);
 
-    console.log(file, "file");
     const handleZoomIn = () => setZoom(prev => Math.min(prev + 10, 200));
     const handleZoomOut = () => setZoom(prev => Math.max(prev - 10, 50));
 
@@ -50,7 +49,6 @@ const FilePreview = ({ isOpen, onClose, file }: FilePreviewProps) => {
         }
     };
 
-    console.log(file, "file");
 
     return (
         <Modal

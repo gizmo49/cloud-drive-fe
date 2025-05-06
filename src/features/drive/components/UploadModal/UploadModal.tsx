@@ -86,7 +86,6 @@ const UploadModal = ({ isOpen, onClose, reference }: UploadModalProps) => {
 
             await uploadPromise;
         } catch (error) {
-            console.error('Error uploading file:', error);
             setFiles(prev => prev.map(file =>
                 file.id === fileUpload.id ? { ...file, status: 'error' } : file
             ));
