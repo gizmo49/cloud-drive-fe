@@ -15,9 +15,10 @@ interface AuthFormProps {
   onSubmit: (e: FormEvent) => void;
   onChange: (field: keyof AuthFormData, value: string) => void;
   submitButtonText: string;
+  isLoading?: boolean;
 }
 
-export function AuthForm({ formData, onSubmit, onChange, submitButtonText }: AuthFormProps) {
+export function AuthForm({ formData, onSubmit, onChange, submitButtonText, isLoading = false }: AuthFormProps) {
   return (
     <form onSubmit={onSubmit} className={styles.form}>
       <Input
@@ -34,9 +35,9 @@ export function AuthForm({ formData, onSubmit, onChange, submitButtonText }: Aut
         onChange={(e) => onChange('password', e.target.value)}
         required
       />
-      <Button type="submit" className={styles.submitButton}>
+      <Button type="submit" className={styles.submitButton} isLoading={isLoading}>
         {submitButtonText}
       </Button>
-    </form>
+    </form> 
   );
 }

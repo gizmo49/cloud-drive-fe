@@ -6,6 +6,7 @@ import styles from './Button.module.scss';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
   fullWidth?: boolean;
+  isLoading?: boolean;
 }
 
 export function Button({
@@ -13,14 +14,19 @@ export function Button({
   variant = 'primary',
   fullWidth = true,
   className = '',
+  isLoading = false,
+  disabled,
   ...props
 }: ButtonProps) {
   return (
     <button
-      className={`${styles.button} ${styles[variant]} ${fullWidth ? styles.fullWidth : ''} ${className}`}
+      className={`${styles.button} ${styles[variant]} ${fullWidth ? styles.fullWidth : ''} ${isLoading ? styles.loading : ''} ${className}`}
+      disabled={isLoading || disabled}
       {...props}
     >
-      {children}
+      {isLoading ? (
+        <div className={styles.spinner} />
+      ) : children}
     </button>
   );
 }

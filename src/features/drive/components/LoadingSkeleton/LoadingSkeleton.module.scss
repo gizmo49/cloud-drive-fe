@@ -1,0 +1,128 @@
+
+.skeletonRoot {
+  @apply min-h-screen bg-gray-50 flex flex-col animate-pulse;
+}
+
+.header {
+  @apply bg-white border-b border-gray-200 py-3 px-4 md:px-6;
+}
+
+.sidebar {
+  @apply w-64 bg-white border-r border-gray-200 flex-shrink-0 hidden md:flex md:flex-col;
+}
+
+.mobileNav {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around py-2 md:hidden;
+}
+
+.main {
+  @apply flex-1 overflow-y-auto bg-gray-50 pb-16 md:pb-0;
+}
+
+.avatar {
+  @apply h-10 w-10 bg-gray-200 rounded-md;
+}
+
+.searchBar {
+  @apply h-10 w-64 bg-gray-200 rounded-lg;
+}
+
+.iconCircle {
+  @apply h-8 w-8 bg-gray-200 rounded-full;
+}
+
+.iconSmall {
+  @apply h-6 w-6 bg-gray-200 rounded-full mb-1;
+}
+
+.iconTiny {
+  @apply col-span-1 h-4 w-4 bg-gray-200 rounded;
+}
+
+.iconMedium {
+  @apply h-8 w-8 bg-gray-200 rounded mr-3;
+}
+
+.lineShort {
+  @apply h-4 w-3/4 bg-gray-200 rounded mb-1;
+}
+
+.lineMedium {
+  @apply h-3 w-1/2 bg-gray-200 rounded;
+}
+
+.lineThin {
+  @apply h-2 bg-gray-200 rounded-full;
+}
+
+.lineFull {
+  @apply h-4 w-full bg-gray-200 rounded mb-2;
+}
+
+.buttonLarge {
+  @apply h-10 w-full bg-gray-200 rounded-lg;
+}
+
+.buttonMedium {
+  @apply h-10 bg-gray-200 rounded;
+}
+
+.buttonSmall {
+  @apply h-8 bg-gray-200 rounded;
+}
+
+.labelSmall {
+  @apply h-4 w-20 bg-gray-200 rounded mb-3;
+}
+
+.labelMedium {
+  @apply h-6 w-32 bg-gray-200 rounded;
+}
+
+.labelLarge {
+  @apply h-6 w-32 bg-gray-200 rounded mb-2 md:mb-0;
+}
+
+.sectionTitle {
+  @apply h-5 w-24 bg-gray-200 rounded mb-3;
+}
+
+.quickGrid {
+  @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4;
+}
+
+.quickCard {
+  @apply bg-white border border-gray-200 rounded-lg p-4;
+}
+
+.thumbnail {
+  @apply h-24 bg-gray-200 rounded mb-3;
+}
+
+.table {
+  @apply bg-white rounded-lg border border-gray-200 overflow-hidden space-y-1;
+}
+
+.tableHeader {
+  @apply hidden md:grid grid-cols-12 border-b border-gray-200 py-3 px-4;
+}
+
+.tableCol {
+  @apply h-4 w-20 bg-gray-200 rounded;
+}
+
+.tableRow {
+  @apply grid grid-cols-12 items-center py-3 px-4;
+}
+
+.breadcrumbItem {
+  @apply h-4 w-20 bg-gray-200 rounded;
+}
+
+.breadcrumbDivider {
+  @apply mx-2 h-4 w-4 bg-gray-200 rounded;
+}
+
+.breadcrumbItemWide {
+  @apply h-4 w-24 bg-gray-200 rounded;
+}
